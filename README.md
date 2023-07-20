@@ -1,11 +1,13 @@
 ```mermaid
 sequenceDiagram;
-Alice->>John: Hello John, how are you?;
-loop Healthcheck;
-    John->>John: Fight against hypochondria;
-end;
-Note right of John: Rational thoughts!;
-John-->>Alice: Great!;
-John->>Bob: How about you?;
-Bob-->>John: Jolly good!;
+Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note;
+Server-->>Browser: REDIRECT https://studies.cs.helsinki.fi/exampleapp/notes
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+Server-->>Browser: HTML Document;
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css; 
+Server-->>Browser: CSS file;
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.js;
+Server-->>Browser: JS file;
+Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json;
+Server-->>Browser: JSON file;
 ```
